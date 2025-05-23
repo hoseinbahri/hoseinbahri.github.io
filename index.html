@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn :wght@400;700&display=swap" rel="stylesheet">
-  <style>
+<style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,6 +19,7 @@
       color: #333;
       line-height: 1.6;
       direction: rtl;
+      scroll-behavior: smooth; /* Soft scroll effect */
     }
 
     header {
@@ -36,6 +37,31 @@
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
+    }
+
+    /* Sticky Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 1rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00bcd4;
     }
 
     .container {
@@ -130,6 +156,67 @@
       color: #666;
     }
 
+    .authors-section {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin: 40px 0;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .authors-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00bcd4;
+    }
+
+    .author-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .author-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .author-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .author-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .author-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .author-role {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     .order-section {
       background-color: #ffffff;
       padding: 30px;
@@ -207,11 +294,23 @@
       .outline li {
         text-align: right;
       }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
-
+<!-- Sticky Navigation -->
+<div class="navbar">
+  <a href="#book-info">درباره کتاب</a>
+  <a href="#quote">نقل قول</a>
+  <a href="#main-sections">مباحث اصلی</a>
+  <a href="#authors-section">نویسنده و مترجمان</a>
+  <a href="#order-section">سفارش کتاب</a>
+</div>
 <header>
   <h1>هوش مصنوعی خلاق</h1>
   <p>چگونه چت بات ها و دیگر ابزارهای هوش مصنوعی کسب و کارهای را متحول خواهند کرد</p>
@@ -219,7 +318,7 @@
 
 <div class="container">
 
-  <div class="book-info">
+  <div id="book-info" class="book-info">
     <img src="images/GAI/Generative_AI.png" alt="عکس کتاب">
     <div class="book-details">
       <h2>درباره کتاب</h2>
@@ -231,7 +330,7 @@
     </div>
   </div>
 
-  <div class="quote">
+  <div id="quote" class="quote">
     <blockquote>
       "هوش مصنوعی زیرساخت موتور کاوش و کسب و کار تبلیغاتی ما است، و نیز فکر می کنیم که منجر به تعداد زیادی از محصولات جدید شده و تحولات مضاعفی را در برنامه های کاربردی ما به همراه خواهد داشت. هوش مصنوعی خلاق یک حوزه جدید و بسیار هیجان‌انگیز است...و یکی از اهداف من برای متا این است که علاوه بر کارهای پیشرو در زمینه هوش مصنوعی توصیه‌گر، تحقیقات در راستای تبدیل شدن به یک رهبر در حوزه هوش مصنوعی خلاق را نیز راه‌اندازی کنیم."
     </blockquote>
@@ -261,7 +360,8 @@
     </blockquote>
     <p><strong>— فارستر</strong></p>
   </div>
-  <div class="order-section">
+
+  <div id="order-section" class="order-section">
     <h3>نحوه سفارش کتاب</h3>
     <div class="order-buttons">
       <a href="#">خرید آنلاین</a>
@@ -269,7 +369,35 @@
     </div>
     <p style="margin-top: 15px;">عرضه در تمامی کتاب فروشی های معتبر و فروشگاه های آنلاین</p>
   </div>
-  <div class="main-sections">
+
+  <div id="authors-section" class="authors-section">
+    <h2>معرفی نویسنده و مترجمان</h2>
+    <div class="author-grid">
+      <div class="author-card">
+        <img src="images/GAI/Tom-Taulli.webp" alt="عکس تام تائولی">
+        <div class="author-name">تام تائولی</div>
+        <div class="author-role">نویسنده</div>
+        <div class="author-bio">ﺗﺎﻡ ﺗﺎﻭﻟﻲ ﺑﻨﻴﺎﻧﮕﺬﺍﺭ ﻭﺑﺴﺎﻳﺖ OnePrompter.com ﺍﺳﺖ ﻛﻪ ﻳﻚ ﺗﻮﺳﻌﻪ ﺩﻫﻨﺪﺓﺍﺑﺰﺍﺭﻫﺎﻱ ﻫﻮﺵ ﻣﺼﻨﻮﻋﻲ ﺧﻼﻕ ﻭ (ChatGPT) ﺑﺮﺍﻱ ﻛﺴﺐ ﻭﻛﺎﺭﻫﺎ ﻣﺤﺴﻮﺏ ﻣﻲ ﺷﻮﺩ. ﺍﻭﻫﻤﭽﻨﻴﻦ ﻧﻮﻳﺴﻨﺪﺓ ﻛﺘﺎﺏ ﻫﺎﻱ ﻣﺘﻌﺪﺩﻱ ﺍﺯ ﺟﻤﻠﻪ ﻣﺒﺎﻧﻲ ﻫﻮﺵ ﻣﺼﻨﻮﻋﻲ: ﻳﻚ ﻣﻘﺪﻣﻪ ﻏﻴﺮﻓﻨﻲ ﻭﺭﺍﻫﻨﻤﺎﻱ ﺍﺗﻮﻣﺎﺳﻴﻮﻥ ﻓﺮﺁﻳﻨﺪﻫﺎﻱ ﺭﺑﺎﺗﻴﻚ: ﺭﺍﻫﻨﻤﺎﻱ ﭘﻴﺎﺩﻩ ﺳﺎﺯﻱ ﺳﻴﺴﺘﻢ ﻫﺎﻱ RPA ﺍﺳﺖ. ﺗﺎﻡ ﻳﻚﺭﻣﺎﻥ ﻋﻠﻤﻲ ﺗﺨﻴﻠﻲ ﺩﺭﺑﺎﺭﺓ ﻫﻮﺵ ﻣﺼﻨﻮﻋﻲ ﺑﻪ ﻧﺎﻡ ﺧﻮﺩﻛﺎﺭﺷﺪﻩ ﻧﻮﺷﺘﻪ ﺍﺳﺖ ﻛﻪ ﺩﺭﺳﺎﻝ ۲۰۲۳ ﻣﻨﺘﺸﺮ ﺷﺪ.</div>
+      </div>
+      <div class="author-card">
+        <img src="images/GAI/h.b.jpg" alt="عکس دکتر حسین بحری">
+        <div class="author-name">دکتر حسین بحری</div>
+        <div class="author-role">مترجم</div>
+        <div class="author-bio">Phd در مهندسی کامپیوتر - سیستمهای نرم افزاری</div>
+        <div class="author-bio">بیش از 30 سال تجربه و سابقه در حوزه تولید و توسعه سامانه های نرم افزاری و مدیریت فناوری اطلاهات آموزش مهندسی نرم افزار و تولید محتوای آموزشی</div>
+      </div>
+      <div class="author-card">
+        <img src="images/GAI/r.f.png" alt="عکس دکتر راضیه فرحمندی">
+        <div class="author-name">راضیه فرحمندی</div>
+        <div class="author-role">مترجم</div>
+        <div class="author-bio">Phd Candidate  در مهندسی کامپیوتر - سیستمهای نرم افزاری</div>
+        <div class="author-bio">عضو هیأت علمی دانشگاه</div>
+        <div class="author-bio">بیش از 20 سال سابقه و تجربه آموزش آکادمیک در حوزه مهندسی نرم افزار</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-sections" class="main-sections">
     <h2>مباحث اصلی کتاب</h2>
     <ul class="outline">
 	
@@ -307,7 +435,7 @@
 </div>
 
 <footer>
-تمامی حقوق محفوظ است. 1404 &copy; 
+تمامی حقوق محفوظ است.&copy;1404 
 </footer>
 
 </body>
