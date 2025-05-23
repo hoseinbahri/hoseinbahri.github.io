@@ -1,1 +1,208 @@
-Hello World
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+  <meta charset="UTF-8">
+  <title>معرفی کتاب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn :wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      direction: rtl;
+    }
+
+    header {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .book-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .book-info img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-details {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .book-details h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .author, .translator {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .quote {
+      background: #eef2f3;
+      padding: 20px;
+      border-right: 5px solid #00bcd4;
+      margin: 40px 0;
+      border-radius: 8px;
+      font-style: italic;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .order-section {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .order-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .order-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-buttons a:hover {
+      background-color: #0097a7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .book-info {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>عنوان کتاب شما</h1>
+  <p>این یک صفحه معرفی کتاب خاص و زیبا است.</p>
+</header>
+
+<div class="container">
+
+  <div class="book-info">
+    <img src="https://via.placeholder.com/300x450.png?text= کتاب" alt="عکس کتاب">
+    <div class="book-details">
+      <h2>درباره کتاب</h2>
+      <p><strong>نویسنده:</strong> نام نویسنده</p>
+      <p><strong>مترجمان:</strong> نام مترجم اول، نام مترجم دوم</p>
+      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <blockquote>
+      "این یک نقل قول مهم از داخل کتاب یا گفتاری از یک شخصیت مؤثر درباره کتاب است."
+    </blockquote>
+    <p><strong>— نام شخصی معروف</strong></p>
+  </div>
+
+  <div class="order-section">
+    <h3>نحوه سفارش کتاب</h3>
+    <div class="order-buttons">
+      <a href="#">خرید آنلاین</a>
+      <a href="#">سفارش در کتابفروشی</a>
+    </div>
+    <p style="margin-top: 15px;">در تمام کتابفروشی‌های معتبر و فروشگاه‌های آنلاین موجود است.</p>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 نام نویسنده یا انتشارات. تمامی حقوق محفوظ است.
+</footer>
+
+</body>
+</html>
